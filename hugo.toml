@@ -1,7 +1,8 @@
 baseURL = "https://inazarov.tech/"
-locale = "ru"
-title = "Илья Назаров"
 theme = "PaperMod"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 paginate = 10
 enableRobotsTXT = true
@@ -12,14 +13,18 @@ buildExpired = false
 [minify]
   disableXML = true
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "monokai"
+
 [params]
   env = "production"
-  title = "Илья Назаров"
-  description = "DevOps-инженер. Заметки про Kubernetes, инфраструктуру и мониторинг."
-  keywords = ["DevOps", "Kubernetes", "Terraform", "Ansible", "SRE"]
-  author = "Илья Назаров"
   DateFormat = "2 January 2006"
-  defaultTheme = "auto"
+  defaultTheme = "dark"
   disableThemeToggle = false
   ShowReadingTime = true
   ShowShareButtons = false
@@ -32,12 +37,6 @@ buildExpired = false
   comments = false
   hidemeta = false
   hideSummary = false
-  showtoc = false
-  tocopen = false
-
-  [params.homeInfoParams]
-    Title = "Привет, я Илья 👋"
-    Content = "DevOps-инженер из Москвы. Работаю с Kubernetes, PostgreSQL/ClickHouse/Cassandra, Terraform и Ansible. Здесь пишу короткие заметки о том, с чем сталкиваюсь на практике."
 
   [[params.socialIcons]]
     name = "email"
@@ -47,22 +46,49 @@ buildExpired = false
     name = "telegram"
     url = "https://t.me/ilianazarovv"
 
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "Заметки"
-    url = "/posts/"
-    weight = 10
-  [[menu.main]]
-    identifier = "about"
-    name = "Обо мне"
-    url = "/about/"
-    weight = 20
+[languages]
+  [languages.en]
+    label = "English"
+    weight = 1
+    title = "Ilya Nazarov"
+    [languages.en.params]
+      description = "DevOps engineer. Notes on Kubernetes, infrastructure, and monitoring."
+      keywords = ["DevOps", "Kubernetes", "Terraform", "Ansible", "SRE"]
+      author = "Ilya Nazarov"
+      [languages.en.params.homeInfoParams]
+        Title = "Hi, I'm Ilya 👋"
+        Content = "DevOps engineer based in Moscow. I work with Kubernetes, PostgreSQL/ClickHouse/Cassandra, Terraform and Ansible. This is where I write short, practical notes."
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+        weight = 20
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-
-[markup]
-  [markup.highlight]
-    noClasses = false
-    style = "monokai"
+  [languages.ru]
+    label = "Русский"
+    weight = 2
+    title = "Илья Назаров"
+    [languages.ru.params]
+      description = "DevOps-инженер. Заметки про Kubernetes, инфраструктуру и мониторинг."
+      keywords = ["DevOps", "Kubernetes", "Terraform", "Ansible", "SRE"]
+      author = "Илья Назаров"
+      [languages.ru.params.homeInfoParams]
+        Title = "Привет, я Илья 👋"
+        Content = "DevOps-инженер из Москвы. Работаю с Kubernetes, PostgreSQL/ClickHouse/Cassandra, Terraform и Ansible. Здесь пишу короткие заметки о том, с чем сталкиваюсь на практике."
+    [languages.ru.menu]
+      [[languages.ru.menu.main]]
+        identifier = "posts"
+        name = "Заметки"
+        url = "/posts/"
+        weight = 10
+      [[languages.ru.menu.main]]
+        identifier = "about"
+        name = "Обо мне"
+        url = "/about/"
+        weight = 20
