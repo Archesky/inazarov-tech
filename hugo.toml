@@ -1,0 +1,68 @@
+baseURL = "https://inazarov.tech/"
+locale = "ru"
+title = "Илья Назаров"
+theme = "PaperMod"
+
+paginate = 10
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[minify]
+  disableXML = true
+
+[params]
+  env = "production"
+  title = "Илья Назаров"
+  description = "DevOps-инженер. Заметки про Kubernetes, инфраструктуру и мониторинг."
+  keywords = ["DevOps", "Kubernetes", "Terraform", "Ansible", "SRE"]
+  author = "Илья Назаров"
+  DateFormat = "2 January 2006"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = false
+  ShowToc = true
+  TocOpen = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "Привет, я Илья 👋"
+    Content = "DevOps-инженер из Москвы. Работаю с Kubernetes, PostgreSQL/ClickHouse/Cassandra, Terraform и Ansible. Здесь пишу короткие заметки о том, с чем сталкиваюсь на практике."
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:nazarovilia.mifi@gmail.com"
+
+  [[params.socialIcons]]
+    name = "telegram"
+    url = "https://t.me/ilianazarovv"
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Заметки"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "Обо мне"
+    url = "/about/"
+    weight = 20
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "monokai"
